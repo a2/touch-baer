@@ -3,7 +3,7 @@
 //  TouchBarTest
 //
 //  Created by Alexsander Akers on 2/13/17.
-//  Copyright © 2017 Alexsander Akers. All rights reserved.
+//	Modified by Melvin Gundlach on Jul 14, 2018
 //
 
 #import "AppDelegate.h"
@@ -40,8 +40,7 @@ static const NSTouchBarItemIdentifier kGroupIdentifier = @"io.a2.Group";
 
 - (void)present:(id)sender
 {
-    [NSTouchBar presentSystemModalFunctionBar:self.groupTouchBar
-                     systemTrayItemIdentifier:kPandaIdentifier];
+	[NSTouchBar presentSystemModalTouchBar:self.groupTouchBar systemTrayItemIdentifier:kPandaIdentifier];
 }
 
 - (NSTouchBarItem *)touchBar:(NSTouchBar *)touchBar
