@@ -40,8 +40,13 @@ static const NSTouchBarItemIdentifier kGroupIdentifier = @"io.a2.Group";
 
 - (void)present:(id)sender
 {
-    [NSTouchBar presentSystemModalFunctionBar:self.groupTouchBar
-                     systemTrayItemIdentifier:kPandaIdentifier];
+    if (@available(macOS 10.14, *)) {
+        [NSTouchBar presentSystemModalTouchBar:self.groupTouchBar
+                      systemTrayItemIdentifier:kPandaIdentifier];
+    } else {
+        [NSTouchBar presentSystemModalFunctionBar:self.groupTouchBar
+                         systemTrayItemIdentifier:kPandaIdentifier];
+    }
 }
 
 - (NSTouchBarItem *)touchBar:(NSTouchBar *)touchBar
